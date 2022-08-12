@@ -1,0 +1,43 @@
+@import "../../assets/_mixins.scss";
+.list-page {
+    .submit {
+        @include flex(row, center);
+        @include border-radius(6px);
+        background-color: #f7f7f7;
+        color: #4f4f4f;
+        padding: 8px;
+        border: solid 1px #e1e1e1;
+  
+        &:hover {
+            cursor: pointer;
+        }
+  
+        .icon {
+            @include point();
+  
+            svg {
+            font-size: 30px;
+            color: #000;
+        }
+  
+        &+span {
+            margin-left: 20px;
+            text-transform: uppercase;
+            color: #000;
+            letter-spacing: 0.4px;
+            font-size: 20px;
+        }
+    }
+  
+}
+  
+    hr {
+      border-top: solid 2px #e1e1e1;
+      margin: 20px 0;
+    }
+  
+    .items {
+      margin: 20px 0;
+    }
+  
+  }

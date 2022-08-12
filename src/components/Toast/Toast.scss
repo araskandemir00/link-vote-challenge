@@ -1,0 +1,48 @@
+@import "../../assets/_mixins.scss";
+$color-success: #155724;
+$color-success-light: #c3e6cb;
+$color-success-dark: #d4edda;
+$color-error: #721c24;
+$color-error-light: #f8d7da;
+$color-error-dark: #f5c6cb;
+$color-error-darker: #ff0000;
+
+.toast {
+    @include flex(row, center, center);
+    @include border-radius(6px);
+    visibility: visible;
+    left: calc((100% - 300px) / 2);
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 30px;
+    padding: 10px 20px;
+
+    &.success {
+        color: $color-success;
+        background-color: $color-success-dark;
+        border: solid 1px $color-success-light;
+    }
+
+    &.error {
+        color: $color-error;
+        background-color: $color-error-dark;
+        border: solid 1px $color-error-light;
+    }
+
+    &.vissible {
+        @include toastAnimation();
+        visibility: visible;
+    }
+
+    span {
+        &:first-of-type {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        &+span {
+            margin-left: 10px;
+        }
+    }
+}
